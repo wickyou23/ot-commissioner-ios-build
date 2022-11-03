@@ -110,21 +110,22 @@ elif [ "$(uname)" = "Darwin" ]; then
     echo "OS is Darwin"
 
     ## Install packages
-    brew update
-    brew install coreutils \
-                 readline \
-                 cmake \
-                 ninja \
-                 swig@4 \
-                 lcov && true
+    arch -arm64 brew update
+    arch -arm64 brew install coreutils \
+                            readline \
+                            cmake \
+                            ninja \
+                            swig@4 \
+                            llvm@11 \
+                            lcov && true
 
-    brew install llvm@9 && sudo ln -s "$(brew --prefix llvm@9)/bin/clang-format" /usr/local/bin/clang-format-9 \
-    || echo 'WARNING: could not install clang-format-9, which is useful if you plan to contribute C/C++ code to the OpenThread project.'
+    # arch -arm64 brew install llvm@11 && sudo ln -s "$(brew --prefix llvm@11)/bin/clang-format" /usr/local/bin/clang-format-11 \
+    # || echo 'WARNING: could not install clang-format-11, which is useful if you plan to contribute C/C++ code to the OpenThread project.'
 
     ## Install latest cmake
     match_version "$(cmake --version | grep -E -o '[0-9].*')" "${MIN_CMAKE_VERSION}" || {
-        brew unlink cmake
-        brew install cmake --HEAD
+        arch -arm64 brew unlink cmake
+        arch -arm64 brew install cmake --HEAD
     }
 else
     echo "platform $(uname) is not fully supported"
