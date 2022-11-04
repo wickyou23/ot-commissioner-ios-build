@@ -8,8 +8,8 @@
 	branch = develop
 [submodule "third_party/libevent/repo"]
 	path = third_party/libevent/repo
-	url = https://github.com/libevent/libevent
-	branch = master
+	url = https://github.com/wickyou23/libevent.git
+	branch = fix_build_for_ios
 [submodule "third_party/COSE-C/repo"]
 	path = third_party/COSE-C/repo
 	url = https://github.com/wgtdkp/COSE-C.git
