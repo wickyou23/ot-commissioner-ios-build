@@ -1,38 +1,12 @@
 readonly CUR_DIR="$(dirname "$(realpath -s "$0")")"
-readonly MIN_CMAKE_VERSION="3.10.1"
 
 set -e
 
-echo "##Install packages"
-arch -arm64 brew update
-arch -arm64 brew install coreutils \
-                        readline \
-                        cmake \
-                        ninja \
-                        swig@4 \
-                        llvm@11 \
-                        lcov && true
+cd "${CUR_DIR}" 
 
-echo "##Install latest cmake"
-match_version() {
-    local current_version=$1
-    local required_version=$2
-    local min_version
+sh "bootstrap.sh"
 
-    min_version="$(printf '%s\n' "$required_version" "$current_version" | sort -V | head -n1)"
-    if [ "${min_version}" = "${required_version}" ]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
-match_version "$(cmake --version | grep -E -o '[0-9].*')" "${MIN_CMAKE_VERSION}" || {
-    arch -arm64 brew unlink cmake
-    arch -arm64 brew install cmake --HEAD
-}
-
-cd "${CUR_DIR}" && cd "../"
+cd "../"
 
 mkdir -p "ios-build" && cd "ios-build"
 
