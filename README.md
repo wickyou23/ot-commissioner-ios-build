@@ -1,3 +1,20 @@
+# My Guide
+
+1. The project based on [ot-commissioner](https://github.com/openthread/ot-commissioner) support build library(.a) for iOS platform.
+
+2. Building:
+
+From the root project, run the script:
+
+```sh
+sh ./script/build-ios-commissioner-libs.sh
+```
+
+
+> Note: The script runs on Mac M1. If using the Mac Intel, you can try to edit `brew` installer in file `./script/bootstrap.h` line 80.
+
+<br/>
+
 [![Build][ot-comm-gh-action-build-svg]][ot-comm-gh-action-build] [![Tests][ot-comm-gh-action-tests-svg]][ot-comm-gh-action-tests] [![Coverage Status][ot-comm-codecov-svg]][ot-comm-codecov]
 
 ---
