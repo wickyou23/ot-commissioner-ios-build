@@ -7,13 +7,19 @@
 From the root project, run the script:
 
 ```sh
-sh ./script/build-ios-commissioner-libs.sh
+sudo sh ./script/build-ios-commissioner-libs.sh
 ```
 
 
 > Note: The script runs on Mac M1. If using the Mac Intel, you can try to edit `brew` installer in file `./script/bootstrap.h` line 80.
 
-<br/>
+3. If you get an error like the one below, ignore them, and then go to the root project -> ios-build -> ot-comission-release to get a build.
+
+
+![Screen Shot 2022-11-07 at 10 29 04](https://user-images.githubusercontent.com/5183190/200220541-15e27bf8-2e08-498e-a8fb-b4db01949353.png)
+
+
+<br/><br/><br/><br/>
 
 [![Build][ot-comm-gh-action-build-svg]][ot-comm-gh-action-build] [![Tests][ot-comm-gh-action-tests-svg]][ot-comm-gh-action-tests] [![Coverage Status][ot-comm-codecov-svg]][ot-comm-codecov]
 
