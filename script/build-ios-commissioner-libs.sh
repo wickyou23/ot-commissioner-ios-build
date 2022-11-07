@@ -31,8 +31,10 @@ echo "##CMake builds xcode project..."
 cmake --build . --config Release
 
 cd  "../" && mkdir -p "ot-commissioner-release"
-cp "ios-cmake-gen/src/library/Release-iphoneos/libcommissioner.a" "ot-commissioner-release"
-cp -a "../include" "ot-commissioner-release"
+
+echo "##Install lib"
+cmake --install ./ios-cmake-gen/./ --config Release --prefix ./ot-commissioner-release
+
 open "ot-commissioner-release"
 
 echo "##DONE!!!!!!!!!!"
