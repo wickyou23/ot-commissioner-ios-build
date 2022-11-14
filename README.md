@@ -18,6 +18,8 @@ sudo sh ./script/build-ios-commissioner-libs.sh
 
 ![Screen Shot 2022-11-07 at 10 29 04](https://user-images.githubusercontent.com/5183190/200220541-15e27bf8-2e08-498e-a8fb-b4db01949353.png)
 
+4. [Basic Example](https://github.com/wickyou23/ot-commissioner-ios-example.git) for the library.
+
 
 <br/><br/><br/><br/>
 
